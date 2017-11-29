@@ -17,3 +17,5 @@
 _apt: [
   { state: "latest", name: "memcached" },
 ]
+
+_memcached_user: "memcache"
