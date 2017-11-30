@@ -17,3 +17,5 @@
 _yum: [
   { state: "latest", name: "memcached" },
 ]
+
+_memcached_user: "memcached"

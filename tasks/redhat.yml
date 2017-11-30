@@ -26,3 +26,14 @@
     yum -y clean all
   changed_when: false
   tags: memcached
+
+- name: copy templates
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
+  with_items:
+    - { src: "etc/sysconfig/memcached.j2", dest: "/etc/sysconfig/memcached", owner: "root", group: "root", mode: "0644" }
+  tags: memcached
